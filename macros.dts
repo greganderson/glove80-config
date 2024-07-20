@@ -1,0 +1,39 @@
+    /* Macros for changing the LED colors */
+    macros {
+        gaming_leds: gaming_leds {
+            label = "gaming-leds";
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&rgb_ug RGB_COLOR_HSB(0,100,100)>;
+        };
+        programming_leds: programming_leds {
+            label = "programming-leds";
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&rgb_ug RGB_COLOR_HSB(120,100,100)>;
+        };
+        main_leds: main_leds {
+            label = "Change the LEDs to the main layer color";
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&rgb_ug RGB_COLOR_HSB(240,100,100)>;
+        };
+    };
+
+    /* Actions to perform when switching between various layers */
+    behaviors {
+        to_gaming: to_gaming {
+            compatible = "zmk,behavior-macro";
+            label = "Go to gaming layer";
+            #binding-cells = <0>;
+
+            bindings = <&gaming_leds &to LAYER_Gaming>;
+        };
+        to_main: to_main {
+            compatible = "zmk,behavior-macro";
+            label = "Go to base layer";
+            #binding-cells = <0>;
+
+            bindings = <&main_leds &to LAYER_Base>;
+        };
+    };
