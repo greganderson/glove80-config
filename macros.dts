@@ -12,11 +12,47 @@
             #binding-cells = <0>;
             bindings = <&rgb_ug RGB_COLOR_HSB(120,100,100)>;
         };
+        vim_leds: vim_leds {
+            label = "vim-leds";
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&rgb_ug RGB_COLOR_HSB(60,80,100)>;
+        };
         main_leds: main_leds {
             label = "Change the LEDs to the main layer color";
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings = <&rgb_ug RGB_COLOR_HSB(240,100,100)>;
+        };
+        cut_to_end: cut_to_end {
+            label = "Move cursor forward one word";
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LC(K)>;
+        };
+        beginning_of_line: beginning_of_line {
+            label = "Move to beginning of line";
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LC(A)>;
+        };
+        end_of_line: end_of_line {
+            label = "Move to end of line";
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LC(E)>;
+        };
+        forward_word: forward_word {
+            label = "Move cursor forward one word";
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LA(RIGHT)>;
+        };
+        backward_word: backward_word {
+            label = "Move cursor backward one word";
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LA(LEFT)>;
         };
     };
 
